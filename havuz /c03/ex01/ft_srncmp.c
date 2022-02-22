@@ -6,7 +6,7 @@
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 12:03:36 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/21 11:11:11 by eyuksel          ###   ########.tr       */
+/*   Updated: 2022/02/22 15:45:13 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		i++;
 	}
 	return (0);
- }
+}
 /*
 int	main()
 {
