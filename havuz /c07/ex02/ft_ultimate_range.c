@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:36:06 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:47 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/03/02 15:28:38 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/03/03 01:14:28 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	unsigned int	i;
-	unsigned int	a;
+	int	bound;
+	int	index;
+	int	*buffer;
 
-	i = 0;
-	a = 0;
-	while (dest[i] != '\0')
+	if (min >= max)
 	{
-		i++;
+		*range = 0;
+		return (0);
 	}
-	while (a < nb && src[a] != '\0')
+	bound = max - min;
+	buffer = malloc(bound * sizeof(int));
+	if (!buffer)
 	{
-		dest[i + a] = src [a];
-		a++;
-	}	
-	dest[i + a] = '\0';
-	return (dest);
+		*range = 0;
+		return (-1);
+	}
+	*range = buffer;
+	index = 0;
+	while (index < bound)
+	{
+		buffer[index] = min + index;
+		index++;
+	}
+	return (bound);
 }

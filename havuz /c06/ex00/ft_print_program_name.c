@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:36:06 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:47 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/02/24 13:42:26 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/03/01 23:02:15 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+void	ft_putchar(char c)
 {
-	unsigned int	i;
-	unsigned int	a;
+	write (1, &c, 1);
+}
+
+int	main(int argc, char *argv[])
+{
+	int	i;
 
 	i = 0;
-	a = 0;
-	while (dest[i] != '\0')
+	while (argv[0][i] != '\0' && argc)
 	{
-		i++;
+		ft_putchar(argv[0][i++]);
 	}
-	while (a < nb && src[a] != '\0')
-	{
-		dest[i + a] = src [a];
-		a++;
-	}	
-	dest[i + a] = '\0';
-	return (dest);
+	ft_putchar('\n');
+	return (0);
 }

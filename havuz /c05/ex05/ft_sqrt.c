@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:36:06 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:47 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/02/23 19:54:39 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/02/23 20:24:22 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_sqrt(int nb)
 {
-	unsigned int	i;
-	unsigned int	a;
+	long	index;
+	long	b;
 
-	i = 0;
-	a = 0;
-	while (dest[i] != '\0')
+	b = nb;
+	if (b <= 0)
 	{
-		i++;
+		return (0);
 	}
-	while (a < nb && src[a] != '\0')
+	if (b == 1)
 	{
-		dest[i + a] = src [a];
-		a++;
-	}	
-	dest[i + a] = '\0';
-	return (dest);
+		return (1);
+	}
+	index = 2;
+	if (b >= 2)
+	{
+		while (index * index <= b)
+		{
+			if (index * index == b)
+			{
+				return (index);
+			}
+			index++;
+		}
+	}
+	return (0);
 }

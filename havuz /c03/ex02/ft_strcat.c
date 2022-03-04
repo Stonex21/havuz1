@@ -5,25 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 01:49:47 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/20 14:17:21 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/02/26 19:57:11 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/02/26 19:57:17 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ftr_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
-	int	a;
+	int	j;
 
 	i = 0;
 	while (dest[i] != '\0')
-		i++;
-	a = 0;
-	while (src[a] != '\0')
 	{
-		dest[i] = src[a];
 		i++;
-		a++;
+	}
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src [j];
+		i++;
+		j++;
 	}
 	dest[i] = '\0';
 	return (dest);

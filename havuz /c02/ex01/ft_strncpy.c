@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-char	*ft_strnpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 
 {
 	unsigned int	i;

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:36:06 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:47 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/03/03 23:20:01 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/03/03 23:20:43 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	unsigned int	i;
-	unsigned int	a;
+# include <unistd.h>
 
-	i = 0;
-	a = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (a < nb && src[a] != '\0')
-	{
-		dest[i + a] = src [a];
-		a++;
-	}	
-	dest[i + a] = '\0';
-	return (dest);
-}
+typedef enum a_bool{
+	false = 0,
+	true = 1,
+}	t_bool;
+
+# define FALSE false
+# define TRUE true
+# define EVEN(number) (number % 2 == 0)
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define SUCCESS 0
+#endif

@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:36:06 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:47 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/03/04 01:17:17 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/03/04 01:17:19 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+typedef struct s_stock_str
 {
-	unsigned int	i;
-	unsigned int	a;
+	int			size;
+	char		*str;
+	char		*copy;
+}				t_stock_str;
 
-	i = 0;
-	a = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (a < nb && src[a] != '\0')
-	{
-		dest[i + a] = src [a];
-		a++;
-	}	
-	dest[i + a] = '\0';
-	return (dest);
-}
+#endif

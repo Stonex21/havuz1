@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:36:06 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:47 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/02/24 05:44:28 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/02/28 19:51:19 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_is_prime(int nb)
 {
-	unsigned int	i;
-	unsigned int	a;
+	int	i;
 
-	i = 0;
-	a = 0;
-	while (dest[i] != '\0')
+	i = 2;
+	if (nb <= 1)
+		return (0);
+	while (i <= (nb / 2))
 	{
-		i++;
+		if (nb % i == 0)
+			return (0);
+		else
+			i += 1;
 	}
-	while (a < nb && src[a] != '\0')
-	{
-		dest[i + a] = src [a];
-		a++;
-	}	
-	dest[i + a] = '\0';
-	return (dest);
+	return (1);
 }

@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:36:06 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:47 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/03/02 12:48:20 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/03/03 00:59:29 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_str_length(char *str)
 {
-	unsigned int	i;
-	unsigned int	a;
+	int	index;
 
-	i = 0;
-	a = 0;
-	while (dest[i] != '\0')
+	index = 0;
+	while (str[index])
+		index++;
+	return (index);
+}
+
+char	*ft_strdup(char *src)
+{
+	int		index;
+	char	*dest;
+	char	*d;
+
+	index = 0;
+	d = ((dest = (char *)malloc(ft_str_length(src) * sizeof(char) + 1)));
+	if (!d)
 	{
-		i++;
+		return (0);
 	}
-	while (a < nb && src[a] != '\0')
+	while (src[index])
 	{
-		dest[i + a] = src [a];
-		a++;
-	}	
-	dest[i + a] = '\0';
+		dest[index] = src[index];
+		index++;
+	}
+	dest[index] = '\0';
 	return (dest);
 }

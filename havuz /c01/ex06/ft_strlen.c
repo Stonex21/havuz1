@@ -24,9 +24,9 @@ int	ft_strlen(char *str)
 	}
 	return (a);
 }
-/*
+
 int	main()
 {
 	char *c = "uyu artık";
 	printf("%d", ft_strlen(c));
-}*/
+}

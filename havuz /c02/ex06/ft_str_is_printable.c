@@ -6,22 +6,20 @@
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 11:45:10 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/16 11:50:02 by eyuksel          ###   ########.tr       */
+/*   Updated: 2022/02/21 13:14:20 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	fy_str_is_printanle(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
-		{
-			if (!(str [i] >= 32 && str [i] <= 126))
-			{
-				return (0);
-			}
-			i++;
-		}
+	{
+		if (!(str [i] >= 32 && str [i] <= 126))
+			return (0);
+		i++;
+	}
 	return (1);
 }

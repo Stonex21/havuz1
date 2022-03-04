@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eyuksel <eyuksel@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:36:06 by eyuksel           #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:47 by eyuksel          ###   ########.tr       */
+/*   Created: 2022/02/23 18:34:59 by eyuksel           #+#    #+#             */
+/*   Updated: 2022/02/23 18:38:38 by eyuksel          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_iterative_factorial(int nb)
 {
-	unsigned int	i;
-	unsigned int	a;
+	unsigned int	result;
 
-	i = 0;
-	a = 0;
-	while (dest[i] != '\0')
+	result = 1;
+	while (nb > 0)
 	{
-		i++;
+		result *= nb;
+		nb--;
 	}
-	while (a < nb && src[a] != '\0')
+	if (nb < 0)
 	{
-		dest[i + a] = src [a];
-		a++;
-	}	
-	dest[i + a] = '\0';
-	return (dest);
+		return (0);
+	}
+	return (result);
 }
